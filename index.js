@@ -93,7 +93,7 @@ const keyboard = {
 
     //create html icon
     const createIconHTML = (icon_name) => {
-      return `<i class="material-icon">${icon_name}</i>`;
+      return `<i class="${icon_name}"></i>`;
     };
 
     keyLayout.forEach((key) => {
@@ -108,7 +108,7 @@ const keyboard = {
       switch (key) {
         case "backspace":
           keyElement.classList.add("keyboard-key-wide");
-          keyElement.innerHTML = createIconHTML("back");
+          keyElement.innerHTML = createIconHTML("fas fa-backspace");
 
           keyElement.addEventListener("click", () => {
             this.properties.value = this.properties.value.substring(
@@ -125,7 +125,7 @@ const keyboard = {
             "keyboard-key-wide",
             "keyboard-key-activatable"
           );
-          keyElement.innerHTML = createIconHTML("cpslk");
+          keyElement.innerHTML = createIconHTML("fas fa-arrow-circle-up");
 
           keyElement.addEventListener("click", () => {
             this._toggleCapsLock();
@@ -139,7 +139,7 @@ const keyboard = {
 
         case "enter":
           keyElement.classList.add("keyboard-key-wide");
-          keyElement.innerHTML = createIconHTML("return");
+          keyElement.innerHTML = createIconHTML("fas fa-level-down fa-rotate-90");
 
           keyElement.addEventListener("click", () => {
             this.properties.value += "\n";
@@ -150,7 +150,8 @@ const keyboard = {
 
         case "space":
           keyElement.classList.add("keyboard-key-extra-wide");
-          keyElement.innerHTML = createIconHTML("space");
+          keyElement.innerHTML = createIconHTML("fas fa-horizontal-rule");
+          keyElement.innerHTML = "space";
 
           keyElement.addEventListener("click", () => {
             this.properties.value += " ";
@@ -161,7 +162,7 @@ const keyboard = {
 
         case "done":
           keyElement.classList.add("keyboard-key-wide", "keyboard-key-dark");
-          keyElement.innerHTML = createIconHTML("circle");
+          keyElement.innerHTML = createIconHTML("fas fa-check-circle");
 
           keyElement.addEventListener("click", () => {
             this.close();
